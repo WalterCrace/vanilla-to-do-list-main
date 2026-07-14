@@ -1,0 +1,41 @@
+# Dependencias (Nunca se deben subir a GitHub porque son pesadas y se generan con npm install)
+node_modules/
+jspm_packages/
+web_modules/
+
+# Archivos de producción / Compilación (Se generan automáticamente al compilar)
+dist/
+dist-ssr/
+build/
+out/
+
+# Logs de error y del sistema
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Configuraciones locales y variables de entorno (Datos sensibles)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.local
+
+# Configuración de Editores de Código (Evita conflictos si usas otro IDE)
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db

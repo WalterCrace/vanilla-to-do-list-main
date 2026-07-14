@@ -8,7 +8,7 @@ export class TaskView {
   }
 
   get taskText() {
-    return this.taskInput.ariaValueMax.trim();
+    return this.taskInput.value.trim();
   }
 
   clearInput() {
@@ -20,7 +20,7 @@ export class TaskView {
 
     if (tasks.length === 0) {
       this.taskList.innerHTML =
-        '<p style="text-aling: center; color: #999; padding: 20px;">No hay tareas para mostrar</p>';
+        '<p style="text-align: center; color: #999; padding: 20px;">No hay tareas para mostrar</p>';
       return;
     }
 
@@ -29,14 +29,14 @@ export class TaskView {
       taskDiv.className = `task-item ${task.completed ? 'completed' : ''}`;
 
       taskDiv.innerHTML = `
-      <span>${task.text}</span>
-      <div class="task-buttons">
-        <button class="complete-btn" data-id="${task.id}"
-            ${task.completed ? 'Reactivar' : 'Completar'}
-        </button>
-        <button class="delete-btn" data-id="${task.id}">Eliminar</button>
-      </div>
-      `;
+                <span>${task.text}</span>
+                <div class="task-buttons">
+                    <button class="complete-btn" data-id="${task.id}">
+                        ${task.completed ? 'Reactivar' : 'Completar'}
+                    </button>
+                    <button class="delete-btn" data-id="${task.id}">Eliminar</button>
+                </div>
+            `;
       this.taskList.appendChild(taskDiv);
     });
   }
